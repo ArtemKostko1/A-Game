@@ -1,0 +1,61 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+html a,
+body a {
+  text-decoration: none;
+}
+
+body header .nav-wrapper {
+  padding: 0 50px 0 50px;
+}
+body header .nav-wrapper .menu li a {
+  font-size: 20px;
+  font-weight: 600;
+}
+body header .nav-wrapper .menu li:hover {
+  background-color: #424242;
+}
+body header .nav-wrapper .dropdown-content li a {
+  font-size: 14px;
+}
+body header .nav-wrapper .dropdown-content li:hover {
+  background-color: #f0f0f0;
+}
+body header .nav-wrapper .dropdown-content li:hover a:hover {
+  background-color: #f0f0f0;
+}
+body footer {
+  margin: 0 !important;
+  padding-top: 20px !important;
+}
+body footer .container {
+  margin: 20px auto 30px auto;
+}
+body footer .container .row {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+body footer .container .row .left .white-text {
+  font-family: -apple-system, Arial, Helvetica, sans-serif;
+  font-size: 35px;
+  font-weight: 700;
+}
+body footer .container .row .left .social_networks {
+  display: flex;
+}
+body footer .container .row .left .social_networks .social_link_img {
+  margin-right: 15px;
+}
+body footer .container .row .right .white-text {
+  font-family: -apple-system, Arial, Helvetica, sans-serif;
+  font-size: 35px;
+  font-weight: 700;
+}
+body footer .container .row .right p {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  line-height: 1.25em;
+}
