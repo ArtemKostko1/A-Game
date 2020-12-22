@@ -4,10 +4,10 @@ const app = express();
 
 const exphbs = require('express-handlebars');
 
-const homeRoutes = require('./routes/home');
-const shopRoutes = require('./routes/shop');
-const libraryRoutes = require('./routes/library');
-const supportRoutes = require('./routes/support');
+const homeRoutes = require('./Scripts/home');
+const shopRoutes = require('./Scripts/shop');
+const libraryRoutes = require('./Scripts/library');
+const supportRoutes = require('./Scripts/support');
 
 const hbs = exphbs.create({
     defaultLayout: 'main',
@@ -19,6 +19,7 @@ app.set('view engine', 'hbs');
 app.set('views', 'Pages');
 
 app.use(express.static('Styles/CSS'));
+app.use(express.static('Images'));
 
 app.use('/', homeRoutes);
 app.use('/shop', shopRoutes);
