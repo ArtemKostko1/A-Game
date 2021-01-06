@@ -1,9 +1,11 @@
+//Modules
 const express = require('express');
-const path = require('path');
-const app = express();
-
 const exphbs = require('express-handlebars');
+const app = express();
+const path = require('path');
+const mongoose = require('mongoose')
 
+//Routes
 const homeRoutes = require('./Scripts/home');
 const shopRoutes = require('./Scripts/shop');
 const libraryRoutes = require('./Scripts/library');
@@ -31,6 +33,18 @@ app.use('/support', supportRoutes);
 app.use('/games', gamesRoutes);
 
 const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}`);
-});
+
+async function start() {
+    try{
+        const url = `mongodb+srv://artem:uCkwAF8ADOfhBMic@cluster0.czozb.mongodb.net/test?retryWrites=true&w=majority`;
+        await mongoose.connect(url, {useNewUrlParser: true});
+        app.listen(PORT, () => {
+            console.log(`Server is running on port ${PORT}`);
+        });
+    } catch (e) {
+        console.log(e);
+    }
+}
+
+start();
+
