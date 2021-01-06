@@ -10,39 +10,83 @@ body a {
   text-decoration: none;
 }
 
-body header {
+@font-face {
+  font-family: Defoult;
+  src: url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500&display=swap");
+}
+header {
   height: 64px;
 }
-body header .nav-wrapper {
+header .nav-wrapper {
   position: fixed;
   padding: 0 50px 0 50px;
-  z-index: 1;
+  z-index: 100;
 }
-body header .nav-wrapper .menu li a {
-  font-size: 20px;
+header .nav-wrapper .menu li a {
+  font-family: "Defoult";
+  font-size: 18px;
   font-weight: 600;
 }
-body header .nav-wrapper .menu li:hover {
+header .nav-wrapper .menu li:hover {
   background-color: #424242;
 }
-body header .nav-wrapper .dropdown-content li a {
+header .nav-wrapper .dropdown-content li a {
   font-size: 14px;
 }
-body header .nav-wrapper .dropdown-content li:hover {
+header .nav-wrapper .dropdown-content li:hover {
   background-color: #f0f0f0;
 }
-body header .nav-wrapper .dropdown-content li:hover a:hover {
+header .nav-wrapper .dropdown-content li:hover a:hover {
   background-color: #f0f0f0;
 }
-body .landing {
+
+footer {
+  margin: 0 !important;
+  padding-top: 20px !important;
+}
+footer .container {
+  margin: 20px auto 30px auto;
+}
+footer .container .row {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+footer .container .row .left .white-text {
+  font-family: -apple-system, Arial, Helvetica, sans-serif;
+  font-size: 35px;
+  font-weight: 700;
+}
+footer .container .row .left .social_networks {
+  display: flex;
+}
+footer .container .row .left .social_networks .social_link_img {
+  margin-right: 15px;
+}
+footer .container .row .right .white-text {
+  font-family: -apple-system, Arial, Helvetica, sans-serif;
+  font-size: 35px;
+  font-weight: 700;
+}
+footer .container .row .right p {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  line-height: 1.25em;
+}
+
+@font-face {
+  font-family: Defoult;
+  src: url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500&display=swap");
+}
+.landing_wrapper {
   width: 100%;
   height: 100vh;
   background-image: url("among-us.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
+  z-index: 0;
 }
-body .landing .landing_blackout {
+.landing_wrapper .landing_blackout {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -50,91 +94,393 @@ body .landing .landing_blackout {
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.6);
 }
-body .landing .landing_blackout .landing_content {
+.landing_wrapper .landing_blackout .landing_content {
   display: flex;
   flex-direction: column;
   align-items: center;
+  font-family: "Defoult";
 }
-body .landing .landing_blackout .landing_content .landing_content_name {
+.landing_wrapper .landing_blackout .landing_content .landing_content_name {
   margin: 10px 0;
-  font-family: -apple-system, Arial, Helvetica, sans-serif;
   font-size: 100px;
   font-weight: 800;
   color: #fff;
 }
-body .landing .landing_blackout .landing_content .landing_content_description {
+.landing_wrapper .landing_blackout .landing_content .landing_content_description {
   margin: 10px 0;
-  font-family: -apple-system, Arial, Helvetica, sans-serif;
   font-size: 20px;
   font-weight: 500;
   color: #fff;
 }
-body .landing .landing_blackout .landing_content .landing_button {
+.landing_wrapper .landing_blackout .landing_content .landing_button {
   width: 150px;
   height: 60px;
   margin: 75px 0;
-  background-color: #ff3d3d;
+  background-color: #ff8080;
   border-radius: 5px;
-}
-body .landing .landing_blackout .landing_content .landing_button:hover {
-  background-color: #ff5858;
-}
-body .landing .landing_blackout .landing_content .landing_button .link_btn {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 150px;
-  height: 60px;
-  font-family: -apple-system, Arial, Helvetica, sans-serif;
   font-size: 24px;
   font-weight: 600;
   color: #fff;
+  z-index: 0;
 }
-body .landing .landing_blackout .landing_content .landing_arrow {
+.landing_wrapper .landing_blackout .landing_content .landing_button:hover {
+  background-color: #ff3d3d;
+}
+.landing_wrapper .landing_blackout .landing_content .landing_arrow {
   position: absolute;
   bottom: 0;
 }
-body .landing .landing_blackout h1 {
-  margin: 0;
-  color: #fff;
-}
-body .landing .landing_blackout p {
-  color: #fff;
-}
-body .carousel {
+
+.carousel {
   max-width: 70%;
   height: 100%;
   margin: 100px auto;
 }
-body footer {
-  margin: 0 !important;
-  padding-top: 20px !important;
+
+@font-face {
+  font-family: Defoult;
+  src: url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500&display=swap");
 }
-body footer .container {
-  margin: 20px auto 30px auto;
-}
-body footer .container .row {
-  margin: 0 !important;
-  padding: 0 !important;
-}
-body footer .container .row .left .white-text {
-  font-family: -apple-system, Arial, Helvetica, sans-serif;
-  font-size: 35px;
-  font-weight: 700;
-}
-body footer .container .row .left .social_networks {
+.games_wrapper {
+  width: 100%;
+  height: auto;
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 50px;
 }
-body footer .container .row .left .social_networks .social_link_img {
-  margin-right: 15px;
+.games_wrapper .addGame_container {
+  width: 500px;
+  height: auto;
+  background-color: #FFF;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
+  padding: 30px;
+  z-index: 1;
 }
-body footer .container .row .right .white-text {
+.games_wrapper .addGame_container h3 {
+  margin: 0;
+  font-family: "Defoult";
+  font-weight: 600;
+}
+.games_wrapper .addGame_container .form_wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  height: auto;
+  padding-top: 20px;
+}
+.games_wrapper .addGame_container .form_wrapper form .row {
+  margin: 0;
+  height: 90px;
+}
+.games_wrapper .addGame_container .form_wrapper form .row .input-field {
+  margin: 0;
+  font-family: "Defoult";
+}
+.games_wrapper .addGame_container .form_wrapper form .row .input-field label {
   font-family: -apple-system, Arial, Helvetica, sans-serif;
-  font-size: 35px;
-  font-weight: 700;
-}
-body footer .container .row .right p {
-  font-family: Arial, Helvetica, sans-serif;
   font-size: 16px;
-  line-height: 1.25em;
+  font-weight: 600;
+}
+.games_wrapper .addGame_container .form_wrapper form .btn {
+  background-color: #ff8080;
+  border-radius: 5px;
+  font-family: "Defoult";
+  font-size: 16px;
+  font-weight: 600;
+}
+.games_wrapper .addGame_container .form_wrapper form .btn:hover {
+  background-color: #ff3d3d;
+}
+.games_wrapper .games {
+  width: 100%;
+  height: auto;
+  padding: 50px 0;
+}
+.games_wrapper .games .row {
+  margin: 0;
+}
+.games_wrapper .games .row .col .game_container {
+  margin: 50px 20px;
+  z-index: 0;
+}
+.games_wrapper .games .row .col .game_container .card-image {
+  max-height: 100%;
+}
+.games_wrapper .games .row .col .game_container .card-reveal {
+  font-family: "Defoult";
+}
+.games_wrapper .games .row .col .game_container .card-reveal .card-title {
+  font-size: 30px;
+  font-weight: 600;
+}
+.games_wrapper .games .row .col .game_container .card-reveal p {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 10px 0;
+}
+.games_wrapper .games .row .col .game_container .card-reveal p span {
+  font-weight: 500;
+}
+.games_wrapper .games .row .col .game_container .card-reveal p .ageLimit {
+  color: red;
+}
+.games_wrapper .games .row .col .game_container .card-action {
+  padding: 0;
+}
+.games_wrapper .games .row .col .game_container .card-action .row {
+  margin: 0;
+}
+.games_wrapper .games .row .col .game_container .card-action .row .col {
+  padding: 0;
+}
+.games_wrapper .games .row .col .game_container .card-action .row .col .card-action_btn {
+  height: 50px;
+  width: 100%;
+  margin: 0;
+  color: #999999;
+  background-color: #FFF;
+  box-shadow: 0 0 0 transparent !important;
+  font-family: "Defoult";
+  font-weight: 600;
+}
+.games_wrapper .games .row .col .game_container .card-action .row .col .card-action_btn:hover {
+  background-color: #fafafa;
+  color: #212121;
+}
+
+@font-face {
+  font-family: Defoult;
+  src: url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500&display=swap");
+}
+.gamesShop {
+  width: 100%;
+  height: auto;
+  padding: 50px 0;
+}
+.gamesShop .row {
+  margin: 0;
+}
+.gamesShop .row .col .game_wrapper {
+  margin: 50px 20px;
+  z-index: 0;
+}
+.gamesShop .row .col .game_wrapper .card-image {
+  max-height: 100%;
+}
+.gamesShop .row .col .game_wrapper .card-content {
+  font-family: "Defoult";
+}
+.gamesShop .row .col .game_wrapper .card-content .card-title {
+  font-size: 30px;
+  font-weight: 600;
+}
+.gamesShop .row .col .game_wrapper .card-content .ganre {
+  font-size: 16px;
+}
+.gamesShop .row .col .game_wrapper .card-content .ageLimit {
+  font-size: 16px;
+  color: red;
+}
+.gamesShop .row .col .game_wrapper .card-reveal {
+  font-family: "Defoult";
+}
+.gamesShop .row .col .game_wrapper .card-reveal .card-title {
+  font-size: 30px;
+  font-weight: 600;
+}
+.gamesShop .row .col .game_wrapper .card-reveal p {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 10px 0;
+}
+.gamesShop .row .col .game_wrapper .card-reveal p span {
+  font-weight: 500;
+}
+.gamesShop .row .col .game_wrapper .card-action {
+  padding: 0;
+}
+.gamesShop .row .col .game_wrapper .card-action .row {
+  margin: 0;
+}
+.gamesShop .row .col .game_wrapper .card-action .row .col {
+  padding: 0;
+}
+.gamesShop .row .col .game_wrapper .card-action .row .col .card-action_btn {
+  height: 50px;
+  width: 100%;
+  margin: 0;
+  color: #999999;
+  background-color: #FFF;
+  box-shadow: 0 0 0 transparent !important;
+  font-family: "Defoult";
+  font-weight: 600;
+}
+.gamesShop .row .col .game_wrapper .card-action .row .col .card-action_btn:hover {
+  background-color: #fafafa;
+  color: #212121;
+}
+
+@font-face {
+  font-family: Defoult;
+  src: url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500&display=swap");
+}
+.library_wrapper {
+  width: 100%;
+  height: auto;
+}
+.library_wrapper .fullLibrary_wrapper {
+  padding: 50px 0;
+}
+.library_wrapper .fullLibrary_wrapper .row {
+  margin: 0;
+}
+.library_wrapper .fullLibrary_wrapper .row .col .game_container {
+  margin: 50px 20px;
+  z-index: 0;
+}
+.library_wrapper .fullLibrary_wrapper .row .col .game_container .card-image {
+  max-height: 100%;
+}
+.library_wrapper .fullLibrary_wrapper .row .col .game_container .card-reveal {
+  font-family: "Defoult";
+}
+.library_wrapper .fullLibrary_wrapper .row .col .game_container .card-reveal .card-title {
+  font-size: 30px;
+  font-weight: 600;
+}
+.library_wrapper .fullLibrary_wrapper .row .col .game_container .card-reveal p {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 10px 0;
+}
+.library_wrapper .fullLibrary_wrapper .row .col .game_container .card-reveal p span {
+  font-weight: 500;
+}
+.library_wrapper .fullLibrary_wrapper .row .col .game_container .card-reveal .ageLimit {
+  color: red;
+}
+.library_wrapper .fullLibrary_wrapper .row .col .game_container .card-action {
+  padding: 0;
+}
+.library_wrapper .fullLibrary_wrapper .row .col .game_container .card-action .row {
+  margin: 0;
+  text-align: center;
+}
+.library_wrapper .fullLibrary_wrapper .row .col .game_container .card-action .row .col {
+  padding: 0;
+}
+.library_wrapper .fullLibrary_wrapper .row .col .game_container .card-action .row .col .card-action_btn {
+  height: 50px;
+  width: 100%;
+  margin: 0;
+  color: #999999;
+  background-color: #FFF;
+  box-shadow: 0 0 0 transparent !important;
+  font-family: "Defoult";
+  font-weight: 600;
+}
+.library_wrapper .fullLibrary_wrapper .row .col .game_container .card-action .row .col .card-action_btn:hover {
+  background-color: #fafafa;
+  color: #212121;
+}
+.library_wrapper .emtyLibrary_wrapper {
+  width: 100%;
+  height: 100vh;
+}
+.library_wrapper .emtyLibrary_wrapper div {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.library_wrapper .emtyLibrary_wrapper div h1 {
+  position: relative;
+  top: -64px;
+  margin: 25px;
+  font-family: "Defoult";
+  font-size: 125px;
+  font-weight: 900;
+}
+.library_wrapper .emtyLibrary_wrapper div .toShopLink_button {
+  position: relative;
+  width: auto;
+  height: 60px;
+  top: -64px;
+  margin: 25px;
+  background-color: #ff8080;
+  border-radius: 5px;
+  font-size: 20px;
+  font-weight: 600;
+  color: #fff;
+  z-index: 0;
+}
+.library_wrapper .emtyLibrary_wrapper div .toShopLink_button:hover {
+  background-color: #ff3d3d;
+}
+
+.gameEditing_wrapper {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 50px;
+}
+.gameEditing_wrapper .gameEditing_container {
+  width: 500px;
+  height: auto;
+  background-color: #FFF;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
+  padding: 30px;
+  margin-bottom: 20px;
+  z-index: 0;
+}
+.gameEditing_wrapper .gameEditing_container h3 {
+  margin: 0;
+  font-family: -apple-system, Arial, Helvetica, sans-serif;
+  font-weight: 600;
+}
+.gameEditing_wrapper .gameEditing_container .form_wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  height: auto;
+  padding-top: 20px;
+}
+.gameEditing_wrapper .gameEditing_container .form_wrapper form .row {
+  margin: 0;
+  height: 90px;
+}
+.gameEditing_wrapper .gameEditing_container .form_wrapper form .row .input-field {
+  margin: 0;
+}
+.gameEditing_wrapper .gameEditing_container .form_wrapper form .row .input-field input {
+  font-family: -apple-system, Arial, Helvetica, sans-serif;
+}
+.gameEditing_wrapper .gameEditing_container .form_wrapper form .row .input-field label {
+  font-family: -apple-system, Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+}
+.gameEditing_wrapper .gameEditing_container .form_wrapper form .row .input-field span {
+  font-family: -apple-system, Arial, Helvetica, sans-serif;
+}
+.gameEditing_wrapper .gameEditing_container .form_wrapper form .row .input-field option {
+  font-family: -apple-system, Arial, Helvetica, sans-serif;
+}
+.gameEditing_wrapper .gameEditing_container .form_wrapper form .btn {
+  background-color: #ff8080;
+  border-radius: 5px;
+  font-family: -apple-system, Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+}
+.gameEditing_wrapper .gameEditing_container .form_wrapper form .btn:hover {
+  background-color: #ff3d3d;
 }

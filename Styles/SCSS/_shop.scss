@@ -1,0 +1,95 @@
+@font-face {
+    font-family: Defoult;
+    src: url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500&display=swap');
+}
+
+.gamesShop{
+    width: 100%;
+    height: auto;
+
+    padding: 50px 0;
+
+    .row{
+        margin: 0;
+        
+        .col{
+            .game_wrapper{
+                margin: 50px 20px;
+
+                z-index: 0;
+
+                .card-image{
+                    max-height: 100%;
+                }
+
+                .card-content{
+                    font-family: 'Defoult';
+
+                    .card-title{
+                        font-size: 30px;
+                        font-weight: 600;
+                    }
+
+                    .ganre{
+                        font-size: 16px;
+                    }
+
+                    .ageLimit{
+                        font-size: 16px;
+                        color: red;
+                    }
+                }
+
+                .card-reveal{
+                    font-family: 'Defoult';
+                    
+                    .card-title{
+                        font-size: 30px;
+                        font-weight: 600;
+                    }
+
+                    p{
+                        font-size: 16px;
+                        font-weight: 600;
+                        margin: 10px 0;
+
+                        span{
+                            font-weight: 500;
+                        }
+                    }
+
+                }
+
+                .card-action{
+                    padding: 0;
+
+                    .row{
+                        margin: 0;
+
+                        .col{
+                            padding: 0;
+                            
+                            .card-action_btn{
+                                height: 50px;
+                                width: 100%;
+
+                                margin: 0;
+                                color: #999999;
+                                background-color: #FFF; 
+                                box-shadow: 0 0 0 transparent !important;
+
+                                font-family: 'Defoult';
+                                font-weight: 600;
+
+                                &:hover{
+                                    background-color: rgb(250, 250, 250);
+                                    color: #212121;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

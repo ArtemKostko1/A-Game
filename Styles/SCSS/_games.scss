@@ -1,0 +1,156 @@
+@font-face {
+    font-family: Defoult;
+    src: url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500&display=swap');
+}
+
+.games_wrapper{
+    width: 100%;
+    height: auto;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding: 50px;
+
+    .addGame_container{
+        width: 500px;
+        height: auto;
+
+        background-color: #FFF;
+        box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 
+                    0 3px 1px -2px rgba(0,0,0,0.12), 
+                    0 1px 5px 0 rgba(0,0,0,0.2);
+
+        padding: 30px;
+
+        z-index: 1;
+
+        h3{
+            margin: 0;
+
+            font-family: 'Defoult';
+            font-weight: 600;
+        }
+
+        .form_wrapper{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            width: 100%;
+            height: auto;
+
+            padding-top: 20px;
+
+            form{
+                .row{
+                    margin: 0;
+                    height: 90px;
+
+                    .input-field{
+                        margin:  0;
+
+                        font-family: 'Defoult';
+
+                        label{
+                            font-family: -apple-system, Arial, Helvetica, sans-serif;
+                            font-size: 16px;
+                            font-weight: 600;
+                        }
+                    }
+                }
+
+                .btn{
+                    background-color: #ff8080;
+                    border-radius: 5px;
+                    
+                    font-family: 'Defoult';
+                    font-size: 16px;
+                    font-weight: 600;
+    
+                    &:hover{
+                        background-color: #ff3d3d;
+                    }
+                }
+            }
+        }
+    }
+
+    .games{
+        width: 100%;
+        height: auto;
+    
+        padding: 50px 0;
+    
+        .row{
+            margin: 0;
+            
+            .col{
+                .game_container{
+                    margin: 50px 20px;
+    
+                    z-index: 0;
+    
+                    .card-image{
+                        max-height: 100%;
+                    }
+    
+                    .card-reveal{
+                        font-family: 'Defoult';
+
+                        .card-title{
+                            font-size: 30px;
+                            font-weight: 600;
+                        }
+    
+                        p{
+                            font-size: 16px;
+                            font-weight: 600;
+                            margin: 10px 0;
+    
+                            span{
+                                font-weight: 500;
+                            }
+                            
+                            .ageLimit{
+                                color: red;
+                            }
+                        }
+    
+                    }
+    
+                    .card-action{
+                        padding: 0;
+
+                        .row{
+                            margin: 0;
+    
+                            .col{
+                                padding: 0;
+
+                                .card-action_btn{
+                                    height: 50px;
+                                    width: 100%;
+
+                                    margin: 0;
+                                    color: #999999;
+                                    background-color: #FFF; 
+                                    box-shadow: 0 0 0 transparent !important;
+
+                                    font-family: 'Defoult';
+                                    font-weight: 600;
+
+                                    &:hover{
+                                        background-color: rgb(250, 250, 250);
+                                        color: #212121;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -37,6 +37,12 @@
           <li><a href="/support">Support</a></li>
         {{/if}}
 
+        {{#if isGames}}
+          <li class="active grey darken-3"><a href="/games">Games</a></li>
+        {{else}}
+          <li><a href="/games">Games</a></li>
+        {{/if}}
+
           <!-- Dropdown Trigger -->
           <li>
               <a class="dropdown-trigger" href="#" data-target="navBar_dropdown">
@@ -54,12 +60,3 @@
     </div>
   </nav>
 </header>
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script>
-  $(document).ready(function(){
-    $(".dropdown-trigger").dropdown({
-      coverTrigger: false
-    });
-  });
-</script>

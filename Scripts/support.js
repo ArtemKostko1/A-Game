@@ -3,7 +3,7 @@ const router = Router();
 
 router.get('/', (req, res) => {
     res.render('support', {
-        title: 'A-Game Support',
+        title: 'A-Game | Support',
         isSupport: true
     });
 });

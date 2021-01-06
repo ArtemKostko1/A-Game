@@ -1,18 +1,16 @@
-<div class="landing">
+<div class="landing_wrapper">
   <div class="landing_blackout">
 
     <div class="landing_content">
       <h1 class="landing_content_name">A-Game</h1>
       <p class="landing_content_description">Have a good time with our platform</p>
       
-      <div class="landing_button">
-        <a href="/shop" class="link_btn">
-          Shop
-        </a>
-      </div>
+      <a href="/shop">
+        <button class="landing_button waves-effect waves-light btn-large">Shop</button>
+      </a>
 
       <div class="landing_arrow">
-        <a href="">
+        <a href="#carousel_moove">
             <svg display="none">
               <symbol id="arrow_down" viewBox="0 0 451.847 451.847">
                 <g xmlns="http://www.w3.org/2000/svg">
@@ -30,6 +28,8 @@
   </div>
 </div>
 
+<div id="carousel_moove"></div>
+
 <div class="carousel carousel-slider center" data-indicators="true">
   <div class="carousel-item red white-text" href="#one!">
     <img src="/cyberpunk-2077.jpg" alt="">
@@ -41,12 +41,3 @@
     <img src="/the-last-of-us-part-2.jpg" alt="">
   </div>
 </div>
-
-<script>
-    $(document).ready(function(){
-      $('.carousel.carousel-slider').carousel({
-          fullWidth: true,
-          indicators: true
-        });
-    });
-</script>

@@ -1,0 +1,111 @@
+<div class="games_wrapper">
+    <div class="addGame_container">
+        <h3>Add new game</h3>
+
+        <div class="form_wrapper">
+            <form action="/games" method="POST">
+                <div class="row">
+                    <div class="input-field">
+                        <input id="imgUrl" type="text" name="imgUrl" class="validate" autocomplete="off" required>
+                        <label for="imgUrl">Img URL</label>
+                        <span class="helper-text" data-error="Enter img url"></span>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="input-field">
+                        <input id="name" type="text" name="name" class="validate" data-length="50" maxlength="50" autocomplete="off" required>
+                        <label for="name">Name</label>
+                        <span class="helper-text" data-error="Enter the name"></span>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="input-field">
+                        <input id="ganre" type="text" name="ganre" class="validate" data-length="50" maxlength="50" autocomplete="off" required>
+                        <label for="ganre">Ganre</label>
+                        <span class="helper-text" data-error="Enter ganre"></span>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="input-field">
+                        <input id="description" type="text" name="description" class="validate" data-length="750" maxlength="750" autocomplete="off" required></input>
+                        <label for="description">Description</label>
+                        <span class="helper-text" data-error="Enter description"></span>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="input-field">
+                        <input id="date" type="text" name="releaseDate" class="datepicker validate" required autocomplete="off" required>
+                        <label for="date">Release date</label>
+                        <span class="helper-text" data-error="Enter release date"></span>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="input-field">
+                        <input id="developer" type="text" name="developer" class="validate" data-length="50" maxlength="50" autocomplete="off" required>
+                        <label for="developer">Autor</label>
+                        <span class="helper-text" data-error="Enter autor"></span>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="input-field">
+                        <select name="ageLimit">
+                            <option value="" disabled selected>Choose age limit</option>
+                            <option value="0+">0+</option>
+                            <option value="6+">6+</option>
+                            <option value="12+">12+</option>
+                            <option value="16+">16+</option>
+                            <option value="18+">18+</option>
+                        </select>
+                        <label>Age limit</label>
+                    </div>
+                </div>
+
+                <button class="btn waves-effect waves-light">Add game</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="games">
+        <div class="row">
+            {{#each games}}
+                <div class = "col s12 m4">
+                    <div class="card smol game_container">
+                        <div class="card-image waves-effect waves-block waves-light">
+                            <img class="activator" src="{{imgUrl}}" alt="{{name}}">
+                        </div>
+
+                        <div class="card-reveal">
+                            <p class="card-title grey-text text-darken-4">{{name}}<i class="material-icons right">close</i></p>
+                            <p>Ganre: <span class="ganre">{{ganre}}</span></p>
+                            <p>Age Limit: <span class="ageLimit">{{ageLimit}}</span></p>
+                            <p>Developer: <span class="developer">{{developer}}</span></p>
+                            <p>Release Date: <span class="releaseDate">{{releaseDate}}</span></p>
+                            <p>Description: <span class="description">{{description}}</span></p>
+                        </div>
+
+                        <div class="card-action">
+                            <div class="row">
+                                <div class="col s12 m6">
+                                    <a href="/games/{{id}}/gameEditing?allow=true">
+                                        <button class="card-action_btn waves-effect btn-large">Editing</button>
+                                    </a>
+                                </div>
+                                <div class="col s12 m6">
+                                    <a href="/games/{{id}}/gameEditing?allow=true">
+                                        <button class="card-action_btn waves-effect btn-large">Delete</button>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {{/each}}
+        </div>
+    </div>
+</div>

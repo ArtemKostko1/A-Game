@@ -1,0 +1,53 @@
+<div class="library_wrapper">
+    <div id="library">
+
+        {{#if games.length}}
+        <div class="fullLibrary_wrapper">
+            <div class="row">
+                <section>
+
+                    {{#each games}}
+                        <div class = "col s12 m4">
+                            <div class="card smol game_container">
+                                <div class="card-image waves-effect waves-block waves-light">
+                                    <img class="activator" src="{{imgUrl}}" alt="{{name}}">
+                                </div>
+
+                                <div class="card-reveal">
+                                    <p class="card-title grey-text text-darken-4">{{name}}<i class="material-icons right">close</i></p>
+                                    <p>Ganre: <span class="ganre">{{ganre}}</span></p>
+                                    <p>Age Limit: <span class="ageLimit">{{ageLimit}}</span></p>
+                                    <p>Developer: <span class="developer">{{developer}}</span></p>
+                                    <p>Release Date: <span class="releaseDate">{{releaseDate}}</span></p>
+                                    <p>Description: <span class="description">{{description}}</span></p>
+                                </div>
+
+                                <div class="card-action">
+                                    <div class="row">
+                                        <div class="col s12 m6">
+                                            <button class="card-action_btn waves-effect btn-large js-remove" data-id="{{id}}">Delete</button>
+                                        </div>
+                                        <div class="col s12 m6">
+                                            <button class="card-action_btn waves-effect btn-large">Raiting</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {{/each}}
+                </section>
+            </div>
+        </div>
+
+        {{else}}
+            <div class="emtyLibrary_wrapper">
+                <div>
+                    <h1>Library is empty</h1>
+                    <a href="/shop">
+                        <button class="toShopLink_button waves-effect waves-light btn-large">Go to shop</button>
+                    </a>
+                </div>
+            </div>
+        {{/if}}
+    </div>
+</div>

@@ -1,0 +1,43 @@
+@font-face {
+    font-family: Defoult;
+    src: url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500&display=swap');
+}
+
+header{
+    height: 64px;
+    
+    .nav-wrapper{
+        position: fixed;
+        padding: 0 50px 0 50px;
+        z-index: 100;
+
+        .menu{
+            li{
+                a{
+                    font-family: 'Defoult';
+                    font-size: 18px;
+                    font-weight: 600;
+                }
+            }
+
+            li:hover{
+                background-color: #424242;
+            }
+        }
+
+        .dropdown-content{
+            li{
+                a{
+                    font-size: 14px;
+                }
+            }
+
+            li:hover{
+                background-color:rgb(240, 240, 240);
+                a:hover{
+                    background-color:rgb(240, 240, 240);
+                }
+            }
+        }
+    }
+}

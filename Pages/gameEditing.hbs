@@ -1,0 +1,75 @@
+<div class="gameEditing_wrapper">
+    <div class="gameEditing_container">
+        <h3>Game editing</h3>
+
+        <div class="form_wrapper">
+            <form action="/games/gameEditing" method="POST">
+                <div class="row">
+                    <div class="input-field">
+                        <input id="imgUrl" type="text" name="imgUrl" class="validate" autocomplete="off" value="{{game.imgUrl}}" required>
+                        <label for="imgUrl">Img URL</label>
+                        <span class="helper-text" data-error="Enter img url"></span>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="input-field">
+                        <input id="name" type="text" name="name" class="validate" data-length="50" maxlength="50" autocomplete="off" value="{{game.name}}" required>
+                        <label for="name">Name</label>
+                        <span class="helper-text" data-error="Enter the name"></span>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="input-field">
+                        <input id="ganre" type="text" name="ganre" class="validate" data-length="50" maxlength="50" autocomplete="off" value="{{game.ganre}}" required>
+                        <label for="ganre">Ganre</label>
+                        <span class="helper-text" data-error="Enter ganre"></span>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="input-field">
+                        <input id="description" type="text" name="description" class="validate" data-length="750" maxlength="750" autocomplete="off" value="{{game.description}}" required></input>
+                        <label for="description">Description</label>
+                        <span class="helper-text" data-error="Enter description"></span>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="input-field">
+                        <input id="date" type="text" name="releaseDate" class="datepicker validate" required autocomplete="off" value="{{game.releaseDate}}" required>
+                        <label for="date">Release date</label>
+                        <span class="helper-text" data-error="Enter release date"></span>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="input-field">
+                        <input id="developer" type="text" name="developer" class="validate" data-length="50" maxlength="50" autocomplete="off" value="{{game.developer}}" required>
+                        <label for="developer">Autor</label>
+                        <span class="helper-text" data-error="Enter autor"></span>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="input-field">
+                        <select name="ageLimit" selected="{{game.ageLimit}}">
+                            <option value="" disabled selected>Choose age limit</option>
+                            <option value="0+">0+</option>
+                            <option value="6+">6+</option>
+                            <option value="12+">12+</option>
+                            <option value="16+">16+</option>
+                            <option value="18+">18+</option>
+                        </select>
+                        <label>Age limit</label>
+                    </div>
+                </div>
+
+                <input type="hidden" name="id" value="{{game.id}}">
+
+                <button class="btn waves-effect waves-light">Edit game</button>
+            </form>
+        </div>
+    </div>
+</div>
