@@ -1,27 +1,44 @@
 const {Router} = require('express');
 const Game = require('../models/game');
-const Library = require('../models/library');
 const router = Router();
 
+function mapLibraryItems(library) {
+    return library.items.map(g => ({
+        ...g.gameId._doc,
+        id: g.gameId.id
+    }));
+}
+
 router.get('/', async (req, res) => {
-    const library = await Library.fetch();
+    const user = await req.user
+    .populate('library.items.gameId')
+    .execPopulate();
+
+    const games = mapLibraryItems(user.library);
 
     res.render('library', {
         title: 'A-Game | Library',
         isLibrary: true,
-        games: library.games
+        games: games
     });
 });
 
 router.post('/addToLibrary', async (req, res) => {
-    const game = await Game.getById(req.body.id);
-    await Library.addToLibrary(game);
+    const game = await Game.findById(req.body.id);
+    await req.user.addToLibrary(game);
 
     res.redirect('/shop');
 });
 
 router.delete('/remove/:id', async (req, res) => {
-    const library = await Library.remove(req.params.id);
+    await req.user.removeFromLibrary(req.params.id);
+    const user = await req.user.populate('library.items.gameId').execPopulate();
+
+    const games = mapLibraryItems(user.library);
+    const library = {
+        games
+    };
+
     res.status(200).json(library);
 });
 

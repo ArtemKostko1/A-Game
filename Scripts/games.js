@@ -3,7 +3,11 @@ const Game = require('../models/game');
 const router = Router();
 
 router.get('/', async (req, res) => {
-    const games = await Game.getAllGames();
+    const games = await Game.find()
+    .populate('userId', 'login password')
+    .select('imgUrl name genre description releaseDate developer ageLimit raiting');
+
+    console.log(games);
 
     res.render('games', {
         title: 'A-Game | Games',
@@ -12,32 +16,62 @@ router.get('/', async (req, res) => {
     });
 });
 
+router.post('/', async (req, res) => {
+    const game = new Game({
+        imgUrl: req.body.imgUrl,
+        name: req.body.name,
+        genre: req.body.genre,
+        description: req.body.description,
+        releaseDate: req.body.releaseDate,
+        developer: req.body.developer,
+        ageLimit: req.body.ageLimit,
+        raiting: null,
+        userId: req.user
+    });
+
+    try{
+        await game.save();
+        res.redirect('/games');
+    } catch(err){
+        console.log(err);
+    }
+});
+
+router.post('/gameEditing', async (req, res) => {
+    const {id} = req.body;
+    delete req.body.id;
+
+    await Game.findByIdAndUpdate(id, req.body);
+    res.redirect('/games');
+});
+
 router.get('/:id/gameEditing', async (req, res) => {
     if (!req.query.allow) {
         return res.redirect('/');
     }
 
-    const game = await Game.getById(req.params.id);
+    try{
+        const game = await Game.findById(req.params.id);
     
-    res.render('gameEditing', {
-        title: 'A-Game | Game editing',
-        game
-    });
+        res.render('gameEditing', {
+            title: 'A-Game | Game Editing',
+            game
+        });
+    } catch (err) {
+        console.log(err);
+    }
 });
 
-router.post('/', async (req, res) => {
-    const game = new Game(req.body.imgUrl, req.body.name, req.body.ganre, req.body.description, 
-                          req.body.releaseDate, req.body.developer, req.body.ageLimit);
+router.post('/remove', async (req, res) => {
+    try{
+        const {id} = req.body;
+        delete req.body.id;
 
-    await game.saveGame();
-
-    return res.redirect('/games');
-});
-
-router.post('/gameEditing', async (req, res) => {
-    await Game.update(req.body);
-
-    res.redirect('/games');
+        await Game.deleteOne({_id: id});
+        res.redirect('/games');
+    } catch (err) {
+        console.log(err);
+    }
 });
 
 module.exports = router;

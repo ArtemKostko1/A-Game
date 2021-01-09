@@ -26,14 +26,26 @@ $(document).ready(function() {
 $(document).ready(function(){
     $('.datepicker').datepicker({
         format: 'yyyy-mm-dd',
-        autoClose: true,
-        defaultDate: '2020-12-25'
+        autoClose: true
     });
 });
 
 $(document).ready(function(){
     $('select').formSelect();
 });
+
+//Date format
+const toDate = date => {
+    return new Intl.DateTimeFormat('ru-RU', {
+        year: '2-digit',
+        month: '2-digit',
+        day: '2-digit'
+    }).format(new Date(date));
+};
+
+document.querySelectorAll('.releaseDate').forEach(node => {
+    node.textContent = toDate(node.textContent);
+})
 
 //remove game from library
 const $library = document.querySelector('#library');

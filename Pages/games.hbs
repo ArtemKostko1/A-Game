@@ -22,9 +22,9 @@
                 
                 <div class="row">
                     <div class="input-field">
-                        <input id="ganre" type="text" name="ganre" class="validate" data-length="50" maxlength="50" autocomplete="off" required>
-                        <label for="ganre">Ganre</label>
-                        <span class="helper-text" data-error="Enter ganre"></span>
+                        <input id="genre" type="text" name="genre" class="validate" data-length="50" maxlength="50" autocomplete="off" required>
+                        <label for="genre">Genre</label>
+                        <span class="helper-text" data-error="Enter genre"></span>
                     </div>
                 </div>
 
@@ -82,7 +82,7 @@
 
                         <div class="card-reveal">
                             <p class="card-title grey-text text-darken-4">{{name}}<i class="material-icons right">close</i></p>
-                            <p>Ganre: <span class="ganre">{{ganre}}</span></p>
+                            <p>Genre: <span class="genre">{{genre}}</span></p>
                             <p>Age Limit: <span class="ageLimit">{{ageLimit}}</span></p>
                             <p>Developer: <span class="developer">{{developer}}</span></p>
                             <p>Release Date: <span class="releaseDate">{{releaseDate}}</span></p>
@@ -97,9 +97,10 @@
                                     </a>
                                 </div>
                                 <div class="col s12 m6">
-                                    <a href="/games/{{id}}/gameEditing?allow=true">
+                                    <form action="/games/remove" method="POST">
+                                        <input type="hidden" name="id" value="{{id}}">
                                         <button class="card-action_btn waves-effect btn-large">Delete</button>
-                                    </a>
+                                    </form>
                                 </div>
                             </div>
                         </div>

@@ -254,60 +254,60 @@ footer .container .row .right p {
   font-family: Defoult;
   src: url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500&display=swap");
 }
-.gamesShop {
+.shop_wrapper {
   width: 100%;
   height: auto;
   padding: 50px 0;
 }
-.gamesShop .row {
+.shop_wrapper .row {
   margin: 0;
 }
-.gamesShop .row .col .game_wrapper {
+.shop_wrapper .row .col .game_wrapper {
   margin: 50px 20px;
   z-index: 0;
 }
-.gamesShop .row .col .game_wrapper .card-image {
+.shop_wrapper .row .col .game_wrapper .card-image {
   max-height: 100%;
 }
-.gamesShop .row .col .game_wrapper .card-content {
+.shop_wrapper .row .col .game_wrapper .card-content {
   font-family: "Defoult";
 }
-.gamesShop .row .col .game_wrapper .card-content .card-title {
+.shop_wrapper .row .col .game_wrapper .card-content .card-title {
   font-size: 30px;
   font-weight: 600;
 }
-.gamesShop .row .col .game_wrapper .card-content .ganre {
+.shop_wrapper .row .col .game_wrapper .card-content .ganre {
   font-size: 16px;
 }
-.gamesShop .row .col .game_wrapper .card-content .ageLimit {
+.shop_wrapper .row .col .game_wrapper .card-content .ageLimit {
   font-size: 16px;
   color: red;
 }
-.gamesShop .row .col .game_wrapper .card-reveal {
+.shop_wrapper .row .col .game_wrapper .card-reveal {
   font-family: "Defoult";
 }
-.gamesShop .row .col .game_wrapper .card-reveal .card-title {
+.shop_wrapper .row .col .game_wrapper .card-reveal .card-title {
   font-size: 30px;
   font-weight: 600;
 }
-.gamesShop .row .col .game_wrapper .card-reveal p {
+.shop_wrapper .row .col .game_wrapper .card-reveal p {
   font-size: 16px;
   font-weight: 600;
   margin: 10px 0;
 }
-.gamesShop .row .col .game_wrapper .card-reveal p span {
+.shop_wrapper .row .col .game_wrapper .card-reveal p span {
   font-weight: 500;
 }
-.gamesShop .row .col .game_wrapper .card-action {
+.shop_wrapper .row .col .game_wrapper .card-action {
   padding: 0;
 }
-.gamesShop .row .col .game_wrapper .card-action .row {
+.shop_wrapper .row .col .game_wrapper .card-action .row {
   margin: 0;
 }
-.gamesShop .row .col .game_wrapper .card-action .row .col {
+.shop_wrapper .row .col .game_wrapper .card-action .row .col {
   padding: 0;
 }
-.gamesShop .row .col .game_wrapper .card-action .row .col .card-action_btn {
+.shop_wrapper .row .col .game_wrapper .card-action .row .col .card-action_btn {
   height: 50px;
   width: 100%;
   margin: 0;
@@ -317,7 +317,7 @@ footer .container .row .right p {
   font-family: "Defoult";
   font-weight: 600;
 }
-.gamesShop .row .col .game_wrapper .card-action .row .col .card-action_btn:hover {
+.shop_wrapper .row .col .game_wrapper .card-action .row .col .card-action_btn:hover {
   background-color: #fafafa;
   color: #212121;
 }

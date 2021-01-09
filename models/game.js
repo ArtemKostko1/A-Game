@@ -1,92 +1,48 @@
-const {v4: uuid} = require('uuid');
-const fs = require('fs');
-const path = require('path');
-const { resolve } = require('path');
-const { rejects } = require('assert');
+const {Schema, model} = require('mongoose');
 
-const p = path.join(
-    path.dirname(process.mainModule.filename),
-    'Data',
-    'games.json'
-);
-
-class Game{
-    constructor(imgUrl, name, ganre, description, releaseDate, developer, ageLimit){
-        this.id = uuid();
-        this.imgUrl = imgUrl;
-        this.name = name;
-        this.ganre = ganre;
-        this.description = description;
-        this.releaseDate = releaseDate;
-        this.developer = developer;
-        this.ageLimit = ageLimit;
-        this.rating = null;
+const gameSchema = new Schema({
+    imgUrl: {
+        type: String,
+        required: true
+    },
+    name: {
+        type: String,
+        required: true
+    },
+    genre: {
+        type: String,
+        required: true
+    },
+    description: {
+        type: String,
+        required: true
+    },
+    releaseDate: {
+        type: Date,
+        required: true
+    },
+    developer: {
+        type: String,
+        required: true
+    },
+    ageLimit: {
+        type: String,
+        required: true
+    },
+    raiting: Number,
+    userId: {
+        type: Schema.Types.ObjectId,
+        ref: 'User'
     }
+});
 
-    toJSON(){
-        return{
-            id: this.id,
-            imgUrl: this.imgUrl,
-            name: this.name,
-            ganre: this.ganre,
-            description: this.description,
-            releaseDate: this.releaseDate,
-            developer: this.developer,
-            ageLimit: this.ageLimit,
-            rating: this.rating
-        };
-    }
+gameSchema.method('toClient', function() {
+    const game = this.toObject();
 
-    async saveGame(){
-        const games = await Game.getAllGames();
-        games.push(this.toJSON());
+    game.id = game._id;
+    delete game._id;
 
-        return new Promise((resolve, reject) => {
-            fs.writeFile(p, JSON.stringify(games), (err) => {
-                    if(err){
-                        reject(err);
-                    } else {
-                        resolve();
-                    }
-                }
-            );
-        });
-    }
+    return game;
+});
 
-    static async update(game){
-        const games = await Game.getAllGames();
-        const index = games.findIndex(g => g.id === game.id);
-        games[index] = game;
-
-        return new Promise((resolve, reject) => {
-            fs.writeFile(p, JSON.stringify(games), (err) => {
-                    if(err){
-                        reject(err);
-                    } else {
-                        resolve();
-                    }
-                }
-            );
-        });
-    }
-
-    static getAllGames(){
-        return new Promise((resolve, reject) => {
-            fs.readFile(p, 'utf-8', (err, content) => {
-                    if(err) {
-                        reject(err);
-                    } else{
-                        resolve(JSON.parse(content));
-                    }
-                }
-            );
-        });
-    }
-
-    static async getById(id) {
-        const games = await Game.getAllGames();
-        return games.find(g => g.id === id);
-    }
-}
-
-module.exports = Game;
+module.exports = model('Game', gameSchema);

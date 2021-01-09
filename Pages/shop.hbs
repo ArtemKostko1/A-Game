@@ -1,4 +1,4 @@
-<div class="gamesShop">
+<div class="shop_wrapper">
     <div class="row">
         {{#each shopGames}}
             <div class = "col s12 m4">
@@ -8,14 +8,14 @@
                     </div>
                     <div class="card-content">
                         <span class="card-title activator grey-text text-darken-4">{{name}}<i class="material-icons right">more_vert</i></span>
-                        <p class="ganre">{{ganre}}</p>
+                        <p class="genre">{{genre}}</p>
                         <p class="ageLimit">{{ageLimit}}</p>
                     </div>
                     <div class="card-reveal">
                         <span class="card-title grey-text text-darken-4">{{name}}<i class="material-icons right">close</i></span>
-                        <p class="developer">Developer: <span>{{developer}}</span></p>
-                        <p class="releaseDate">Release Date: <span>{{releaseDate}}</span></p>
-                        <p class="description">Description: <span>{{description}}</span></p>
+                        <p>Developer: <span class="developer">{{developer}}</span></p>
+                        <p>Release Date: <span class="releaseDate">{{releaseDate}}</span></p>
+                        <p>Description: <span class="description">{{description}}</span></p>
                     </div>
                     <div class="card-action">
                         <div class="row">
