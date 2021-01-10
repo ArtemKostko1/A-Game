@@ -11,7 +11,8 @@ const {allowInsecurePrototypeAccess} = require('@handlebars/allow-prototype-acce
 const mongoose = require('mongoose');
 const session = require('express-session');
 const MongoStore = require('connect-mongodb-session')(session);
-const varMiddleware = require('./middleware/variables');
+const variablesMiddleware = require('./middleware/variables');
+const userMiddleware = require('./middleware/user');
 
 //Routes
 const authorizationRoutes = require('./Scripts/authorization');
@@ -50,7 +51,8 @@ app.use(session({
     saveUninitialized: false,
     store
 }));
-app.use(varMiddleware);
+app.use(variablesMiddleware);
+app.use(userMiddleware);
 
 app.use('/', authorizationRoutes);
 app.use('/home', homeRoutes);

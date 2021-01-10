@@ -31,17 +31,17 @@
           <li><a href="/support">Support</a></li>
         {{/if}}
 
-        {{#if isGames}}
-          <li class="active grey darken-3"><a href="/games">Games</a></li>
-        {{else}}
-          <li><a href="/games">Games</a></li>
-        {{/if}}
-
         {{#if isAuth}}
           {{#if isLibrary}}
           <li class="active grey darken-3"><a href="/library">Library</a></li>
           {{else}}
           <li><a href="/library">Library</a></li>
+          {{/if}}
+
+          {{#if isGames}}
+          <li class="active grey darken-3"><a href="/games">Games</a></li>
+          {{else}}
+            <li><a href="/games">Games</a></li>
           {{/if}}
 
           <!-- Dropdown Trigger -->

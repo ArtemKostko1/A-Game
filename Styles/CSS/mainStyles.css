@@ -511,7 +511,7 @@ footer .container .row .right p {
   top: -64px;
   width: 600px;
   height: auto;
-  background-color: rgba(135, 135, 135, 0.75);
+  background-color: rgba(160, 160, 160, 0.75);
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
 }
 .authorization_wrapper .authorization_blackout .authorization_conteiner .up .row {
@@ -556,10 +556,19 @@ footer .container .row .right p {
 .authorization_wrapper .authorization_blackout .authorization_conteiner .up .down .signIn form .row .input-field input {
   color: #FFF;
 }
+.authorization_wrapper .authorization_blackout .authorization_conteiner .up .down .signIn form .row .input-field input:hover {
+  cursor: default;
+  background-color: #8c8c8c;
+  border-radius: 10px;
+}
 .authorization_wrapper .authorization_blackout .authorization_conteiner .up .down .signIn form .row .input-field label {
   font-family: -apple-system, Arial, Helvetica, sans-serif;
   font-size: 16px;
   font-weight: 600;
+  color: #282828;
+}
+.authorization_wrapper .authorization_blackout .authorization_conteiner .up .down .signIn form .row .input-field label:hover {
+  cursor: default;
 }
 .authorization_wrapper .authorization_blackout .authorization_conteiner .up .down .signIn form .btn_wrapper {
   display: flex;
@@ -591,11 +600,19 @@ footer .container .row .right p {
 .authorization_wrapper .authorization_blackout .authorization_conteiner .up .down .registation form .row .input-field input {
   color: #FFF;
 }
+.authorization_wrapper .authorization_blackout .authorization_conteiner .up .down .registation form .row .input-field input:hover {
+  cursor: default;
+  background-color: #8c8c8c;
+  border-radius: 10px;
+}
 .authorization_wrapper .authorization_blackout .authorization_conteiner .up .down .registation form .row .input-field label {
   font-family: -apple-system, Arial, Helvetica, sans-serif;
   font-size: 16px;
   font-weight: 600;
-  color: #b4b4b4;
+  color: #282828;
+}
+.authorization_wrapper .authorization_blackout .authorization_conteiner .up .down .registation form .row .input-field label:hover {
+  cursor: default;
 }
 .authorization_wrapper .authorization_blackout .authorization_conteiner .up .down .registation form .btn_wrapper {
   display: flex;

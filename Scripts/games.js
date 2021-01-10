@@ -1,8 +1,9 @@
 const {Router} = require('express');
 const Game = require('../models/game');
+const authorization = require('../middleware/authorization');
 const router = Router();
 
-router.get('/', async (req, res) => {
+router.get('/', authorization, async (req, res) => {
     const games = await Game.find()
     .populate('userId', 'login password')
     .select('imgUrl name genre description releaseDate developer ageLimit raiting');
@@ -14,7 +15,7 @@ router.get('/', async (req, res) => {
     });
 });
 
-router.post('/', async (req, res) => {
+router.post('/', authorization, async (req, res) => {
     const game = new Game({
         imgUrl: req.body.imgUrl,
         name: req.body.name,
@@ -35,7 +36,7 @@ router.post('/', async (req, res) => {
     }
 });
 
-router.post('/gameEditing', async (req, res) => {
+router.post('/gameEditing', authorization, async (req, res) => {
     const {id} = req.body;
     delete req.body.id;
 
@@ -43,7 +44,7 @@ router.post('/gameEditing', async (req, res) => {
     res.redirect('/games');
 });
 
-router.get('/:id/gameEditing', async (req, res) => {
+router.get('/:id/gameEditing', authorization, async (req, res) => {
     if (!req.query.allow) {
         return res.redirect('/');
     }
@@ -60,7 +61,7 @@ router.get('/:id/gameEditing', async (req, res) => {
     }
 });
 
-router.post('/remove', async (req, res) => {
+router.post('/remove', authorization, async (req, res) => {
     try{
         const {id} = req.body;
         delete req.body.id;
