@@ -7,8 +7,6 @@ router.get('/', async (req, res) => {
     .populate('userId', 'login password')
     .select('imgUrl name genre description releaseDate developer ageLimit raiting');
 
-    console.log(games);
-
     res.render('games', {
         title: 'A-Game | Games',
         isGames: true,

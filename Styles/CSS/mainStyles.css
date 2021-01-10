@@ -484,3 +484,130 @@ footer .container .row .right p {
 .gameEditing_wrapper .gameEditing_container .form_wrapper form .btn:hover {
   background-color: #ff3d3d;
 }
+
+@font-face {
+  font-family: Defoult;
+  src: url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500&display=swap");
+}
+.authorization_wrapper {
+  width: 100%;
+  height: 100vh;
+  background-image: url("among-us.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+.authorization_wrapper .authorization_blackout {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+.authorization_wrapper .authorization_blackout .authorization_conteiner {
+  position: relative;
+  top: -64px;
+  width: 600px;
+  height: auto;
+  background-color: rgba(135, 135, 135, 0.75);
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
+}
+.authorization_wrapper .authorization_blackout .authorization_conteiner .up .row {
+  margin: 0;
+}
+.authorization_wrapper .authorization_blackout .authorization_conteiner .up .row .col {
+  margin: 0;
+  padding: 0;
+}
+.authorization_wrapper .authorization_blackout .authorization_conteiner .up .row .col li {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+.authorization_wrapper .authorization_blackout .authorization_conteiner .up .row .col li a {
+  font-family: Defoult;
+  font-size: 16px;
+  font-weight: 600;
+  color: #FFF;
+}
+.authorization_wrapper .authorization_blackout .authorization_conteiner .up .row .col .active {
+  background-color: rgba(255, 255, 255, 0.25);
+}
+.authorization_wrapper .authorization_blackout .authorization_conteiner .up .down {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 636px;
+  padding: 30px;
+}
+.authorization_wrapper .authorization_blackout .authorization_conteiner .up .down .signIn {
+  width: 100%;
+  height: auto;
+  margin: 0;
+}
+.authorization_wrapper .authorization_blackout .authorization_conteiner .up .down .signIn form .row {
+  margin: 0;
+  height: 100px;
+}
+.authorization_wrapper .authorization_blackout .authorization_conteiner .up .down .signIn form .row .input-field {
+  margin: 0;
+  font-family: "Defoult";
+}
+.authorization_wrapper .authorization_blackout .authorization_conteiner .up .down .signIn form .row .input-field input {
+  color: #FFF;
+}
+.authorization_wrapper .authorization_blackout .authorization_conteiner .up .down .signIn form .row .input-field label {
+  font-family: -apple-system, Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+}
+.authorization_wrapper .authorization_blackout .authorization_conteiner .up .down .signIn form .btn_wrapper {
+  display: flex;
+  justify-content: center;
+}
+.authorization_wrapper .authorization_blackout .authorization_conteiner .up .down .signIn form .btn_wrapper .btn {
+  background-color: #ff8080;
+  border-radius: 5px;
+  font-family: "Defoult";
+  font-size: 16px;
+  font-weight: 600;
+}
+.authorization_wrapper .authorization_blackout .authorization_conteiner .up .down .signIn form .btn_wrapper .btn:hover {
+  background-color: #ff3d3d;
+}
+.authorization_wrapper .authorization_blackout .authorization_conteiner .up .down .registation {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+.authorization_wrapper .authorization_blackout .authorization_conteiner .up .down .registation form .row {
+  margin: 0;
+  height: 90px;
+}
+.authorization_wrapper .authorization_blackout .authorization_conteiner .up .down .registation form .row .input-field {
+  margin: 0;
+  font-family: "Defoult";
+}
+.authorization_wrapper .authorization_blackout .authorization_conteiner .up .down .registation form .row .input-field input {
+  color: #FFF;
+}
+.authorization_wrapper .authorization_blackout .authorization_conteiner .up .down .registation form .row .input-field label {
+  font-family: -apple-system, Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: #b4b4b4;
+}
+.authorization_wrapper .authorization_blackout .authorization_conteiner .up .down .registation form .btn_wrapper {
+  display: flex;
+  justify-content: center;
+}
+.authorization_wrapper .authorization_blackout .authorization_conteiner .up .down .registation form .btn_wrapper .btn {
+  background-color: #ff8080;
+  border-radius: 5px;
+  font-family: "Defoult";
+  font-size: 16px;
+  font-weight: 600;
+}
+.authorization_wrapper .authorization_blackout .authorization_conteiner .up .down .registation form .btn_wrapper .btn:hover {
+  background-color: #ff3d3d;
+}

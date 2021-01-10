@@ -20,7 +20,7 @@ $(document).ready(function(){
 });
 
 $(document).ready(function() {
-    $('input#name, input#ganre, input#description, input#autor').characterCounter();
+    $('input#name, input#ganre, input#description, input#autor, input#password').characterCounter();
 });
 
 $(document).ready(function(){
@@ -34,6 +34,10 @@ $(document).ready(function(){
     $('select').formSelect();
 });
 
+$(document).ready(function(){
+    $('.tabs').tabs();
+});
+
 //Date format
 const toDate = date => {
     return new Intl.DateTimeFormat('ru-RU', {
@@ -45,7 +49,7 @@ const toDate = date => {
 
 document.querySelectorAll('.releaseDate').forEach(node => {
     node.textContent = toDate(node.textContent);
-})
+});
 
 //remove game from library
 const $library = document.querySelector('#library');

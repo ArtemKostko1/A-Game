@@ -1,0 +1,105 @@
+<div class="authorization_wrapper">
+  <div class="authorization_blackout">
+    <div class="authorization_conteiner">
+
+      <div class="up">
+        <div class="row">
+          <div class="col s12">
+            <ul class="tabs">
+              <li class="tab col s6"><a href="#signIn" class="active">Sign In</a></li>
+              <li class="tab col s6"><a href="#registation">Registation</a></li>
+            </ul>
+        </div>
+      </div>
+        
+      <div class="down">
+        <div id="signIn" class="col s6 offset-s3 signIn">
+          <div class="form_wrapper">
+              <form action="/signIn" method="POST">
+
+                  <div class="row">
+                      <div class="input-field">
+                          <input id="signInLogin" type="text" name="signInLogin" class="validate" autocomplete="off" required>
+                          <label for="signInLogin">Login</label>
+                          <span class="helper-text" data-error="Enter login"></span>
+                      </div>
+                  </div>
+
+                  <div class="row">
+                      <div class="input-field">
+                          <input id="signInPassword" type="password" name="signInPassword" class="validate" data-length="8" maxlength="8" autocomplete="off" required>
+                          <label for="signInPassword">Password</label>
+                          <span class="helper-text" data-error="Enter password"></span>
+                      </div>
+                  </div>
+
+                  <div class="btn_wrapper">
+                    <button class="btn waves-effect waves-light">Sign In</button>
+                  </div>
+              </form>
+            </div>
+        </div>
+          
+        <div id="registation" class="col s6 offset-s3 registation">
+            <div class="form_wrapper">
+              <form action="/registration" method="POST">
+
+                  <div class="row">
+                      <div class="input-field">
+                          <input id="userName" type="text" name="userName" class="validate" autocomplete="off" required>
+                          <label for="userName">Name</label>
+                          <span class="helper-text" data-error="Enter name"></span>
+                      </div>
+                  </div>
+
+                  <div class="row">
+                      <div class="input-field">
+                          <input id="userSurname" type="text" name="userSurname" class="validate" autocomplete="off" required>
+                          <label for="userSurname">Surname</label>
+                          <span class="helper-text" data-error="Enter surname"></span>
+                      </div>
+                  </div>
+                  
+                  <div class="row">
+                      <div class="input-field">
+                          <input id="userEmail" type="text" name="userEmail" class="validate" autocomplete="off" required>
+                          <label for="userEmail">E-mail</label>
+                          <span class="helper-text" data-error="Enter E-mail"></span>
+                      </div>
+                  </div>
+
+                  <div class="row">
+                      <div class="input-field">
+                          <input id="registartionLogin" type="text" name="registartionLogin" class="validate" autocomplete="off" required>
+                          <label for="registartionLogin">Login</label>
+                          <span class="helper-text" data-error="Enter login"></span>
+                      </div>
+                  </div>
+
+                  <div class="row">
+                      <div class="input-field">
+                          <input id="registartionPassword" type="password" name="registartionPassword" class="validate" data-length="8" maxlength="8" autocomplete="off" required>
+                          <label for="registartionPassword">Password</label>
+                          <span class="helper-text" data-error="Enter password"></span>
+                      </div>
+                  </div>
+
+                  <div class="row">
+                      <div class="input-field">
+                          <input id="confirmPassword" type="password" name="confirmPassword" class="validate" data-length="8" maxlength="8" autocomplete="off" required>
+                          <label for="confirmPassword">Confirm password</label>
+                          <span class="helper-text" data-error="Confirm password"></span>
+                      </div>
+                  </div>
+
+                  <div class="btn_wrapper">
+                    <button class="btn waves-effect waves-light">Registation</button>
+                  </div>
+              </form>
+            </div>
+          </div>
+        </div>  
+      </div>
+    </div>
+  </div>
+</div>
