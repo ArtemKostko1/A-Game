@@ -1,5 +1,6 @@
 const {Router} = require('express');
 const bcrypt = require('bcryptjs');
+const {body, validationResult} = require('express-validator/check');
 const User = require('../models/user');
 const router = Router();
 
@@ -52,12 +53,12 @@ router.post('/signIn', async (req, res) => {
                 });
             } else {
                 req.flash('signInError', 'Your password is incorrect');
-                res.redirect('/');
+                res.redirect('/#signIn');
             }
 
         } else {
             req.flash('signInError', 'Such user does not exist');
-            res.redirect('/');
+            res.redirect('/#signIn');
         }
 
     } catch (err) {
@@ -65,14 +66,21 @@ router.post('/signIn', async (req, res) => {
     }
 });
 
-router.post('/registration' , async (req, res) => {
+router.post('/registration', body('email').isEmail(), async (req, res) => {
     try{
         const {name, surname, email, login, password, confirmPassword} = req.body;
 
         const created = await User.findOne({ login });
+
+        const errors = validationResult(req);
+        if (!errors.isEmpty()) {
+            req.flash('regError', errors.array()[0].msg);
+            return res.status(422).redirect('/');
+        }
+
         if (created) {
             req.flash('regError', 'This user does exist yet');
-            res.redirect('/');
+            res.redirect('/#registration');
             
         } else {
             const hashPassword = await bcrypt.hash(password, 10);
@@ -80,7 +88,7 @@ router.post('/registration' , async (req, res) => {
             const user = new User({ name, surname, email, login, password: hashPassword, cart: {items: []} });
 
             await user.save();
-            res.redirect('/');
+            res.redirect('/#registration');
         }
     } catch(err) {
         console.log(err);

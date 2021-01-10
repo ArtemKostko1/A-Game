@@ -9,6 +9,29 @@
 
     padding: 50px 0;
 
+    .sorting_wrapper{
+        width: 100%;
+        height: auto;
+
+        display: flex;
+        justify-content: space-around;
+
+        .sort_btn{
+            
+
+            background-color: #ff8080;
+            border-radius: 5px;
+            
+            font-family: 'Defoult';
+            font-size: 16px;
+            font-weight: 600;
+
+            &:hover{
+                background-color: #ff3d3d;
+            }
+        }
+    }
+
     .row{
         margin: 0;
         

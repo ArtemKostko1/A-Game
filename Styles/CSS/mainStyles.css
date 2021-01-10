@@ -259,6 +259,22 @@ footer .container .row .right p {
   height: auto;
   padding: 50px 0;
 }
+.shop_wrapper .sorting_wrapper {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: space-around;
+}
+.shop_wrapper .sorting_wrapper .sort_btn {
+  background-color: #ff8080;
+  border-radius: 5px;
+  font-family: "Defoult";
+  font-size: 16px;
+  font-weight: 600;
+}
+.shop_wrapper .sorting_wrapper .sort_btn:hover {
+  background-color: #ff3d3d;
+}
 .shop_wrapper .row {
   margin: 0;
 }
@@ -511,7 +527,7 @@ footer .container .row .right p {
   top: -64px;
   width: 600px;
   height: auto;
-  background-color: rgba(160, 160, 160, 0.75);
+  background-color: rgba(0, 0, 0, 0.459);
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
 }
 .authorization_wrapper .authorization_blackout .authorization_conteiner .up .row {
@@ -568,14 +584,14 @@ footer .container .row .right p {
 }
 .authorization_wrapper .authorization_blackout .authorization_conteiner .up .down .signIn form .row .input-field input:hover {
   cursor: default;
-  background-color: #8c8c8c;
+  background-color: #4b4b4b;
   border-radius: 10px;
 }
 .authorization_wrapper .authorization_blackout .authorization_conteiner .up .down .signIn form .row .input-field label {
   font-family: -apple-system, Arial, Helvetica, sans-serif;
   font-size: 16px;
   font-weight: 600;
-  color: #282828;
+  color: #c8c8c8;
 }
 .authorization_wrapper .authorization_blackout .authorization_conteiner .up .down .signIn form .row .input-field label:hover {
   cursor: default;
@@ -622,14 +638,14 @@ footer .container .row .right p {
 }
 .authorization_wrapper .authorization_blackout .authorization_conteiner .up .down .registration form .row .input-field input:hover {
   cursor: default;
-  background-color: #8c8c8c;
+  background-color: #4b4b4b;
   border-radius: 10px;
 }
 .authorization_wrapper .authorization_blackout .authorization_conteiner .up .down .registration form .row .input-field label {
   font-family: -apple-system, Arial, Helvetica, sans-serif;
   font-size: 16px;
   font-weight: 600;
-  color: #282828;
+  color: #c8c8c8;
 }
 .authorization_wrapper .authorization_blackout .authorization_conteiner .up .down .registration form .row .input-field label:hover {
   cursor: default;

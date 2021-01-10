@@ -66,8 +66,6 @@
                     </div>
                 </div>
 
-                <input type="hidden" name="_csrf" value="{{ csrf }}">
-
                 <button class="btn waves-effect waves-light">Add game</button>
             </form>
         </div>
@@ -101,7 +99,6 @@
 
                                 <div class="col s12 m6">
                                     <form action="/games/remove/#games" method="POST">
-                                        <input type="hidden" name="_csrf" value="{{ @root.csrf }}">
                                         <input type="hidden" name="id" value="{{id}}">
 
                                         <button class="card-action_btn waves-effect btn-large">Delete</button>

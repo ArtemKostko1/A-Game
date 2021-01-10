@@ -40,8 +40,6 @@
                       </div>
                   </div>
 
-                  <input type="hidden" name="_csrf" value="{{ csrf }}">
-
                   <div class="btn_wrapper">
                     <button class="btn waves-effect waves-light">Sign In</button>
                   </div>
@@ -58,7 +56,7 @@
             {{/if}}
 
             <div class="form_wrapper">
-              <form action="/registration" method="POST">
+              <form action="/registration" method="POST" novalidate>
 
                   <div class="row">
                       <div class="input-field">
@@ -107,8 +105,6 @@
                           <span class="helper-text" data-error="Confirm password"></span>
                       </div>
                   </div>
-
-                  <input type="hidden" name="_csrf" value="{{ csrf }}">
 
                   <div class="btn_wrapper">
                     <button class="btn waves-effect waves-light">Registration</button>

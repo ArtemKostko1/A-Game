@@ -14,4 +14,43 @@ router.get('/', async (req, res) => {
     });
 });
 
+router.get('/sortByName', async (req, res) => {
+    try {
+        const sortGames = await Game.find(req.body.name).sort('name');
+        
+        res.render('sortByName', {
+            title: 'A-Game | Shop',
+            sortGames
+        });
+    } catch (err) {
+        console.log(err);
+    }
+});
+
+router.get('/sortByAgeLimit', async (req, res) => {
+    try {
+        const sortGames = await Game.find(req.body.name).sort('ageLimit');
+        
+        res.render('sortByAgeLimit', {
+            title: 'A-Game | Shop',
+            sortGames
+        });
+    } catch (err) {
+        console.log(err);
+    }
+});
+
+router.get('/SortByDate', async (req, res) => {
+    try {
+        const sortGames = await Game.find(req.body.name).sort('releaseDate');
+        
+        res.render('SortByDate', {
+            title: 'A-Game | Shop',
+            sortGames
+        });
+    } catch (err) {
+        console.log(err);
+    }
+});
+
 module.exports = router;

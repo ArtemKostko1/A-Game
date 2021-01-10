@@ -89,7 +89,7 @@ if($library) {
                                         <div class="card-action">
                                             <div class="row">
                                                 <div class="col s12 m6">
-                                                    <button class="card-action_btn waves-effect btn-large js-remove" data-id="${g.id}" data-csrf="${g.csrf}">Delete</button>
+                                                    <button class="card-action_btn waves-effect btn-large js-remove" data-id="${g.id}">Delete</button>
                                                 </div>
                                                 <div class="col s12 m6">
                                                     <button class="card-action_btn waves-effect btn-large">Raiting</button>
