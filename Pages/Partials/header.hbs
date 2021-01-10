@@ -13,53 +13,74 @@
       </a>
 
       <ul class="menu right hide-on-med-and-down">
-        {{#if isHome}}
-          <li class="active grey darken-3"><a href="/home">Home</a></li>
-        {{else}}
-          <li><a href="/home">Home</a></li>
-        {{/if}}
-
-        {{#if isShop}}
-          <li class="active grey darken-3"><a href="/shop">Shop</a></li>
-        {{else}}
-        <li><a href="/shop">Shop</a></li>
-        {{/if}}
-
-        {{#if isSupport}}
-          <li class="active grey darken-3"><a href="/support">Support</a></li>
-        {{else}}
-          <li><a href="/support">Support</a></li>
-        {{/if}}
-
         {{#if isAuth}}
-          {{#if isLibrary}}
-          <li class="active grey darken-3"><a href="/library">Library</a></li>
-          {{else}}
-          <li><a href="/library">Library</a></li>
-          {{/if}}
 
-          {{#if isGames}}
-          <li class="active grey darken-3"><a href="/games">Games</a></li>
-          {{else}}
-            <li><a href="/games">Games</a></li>
-          {{/if}}
+          {{#if isAdmin}}
 
-          <!-- Dropdown Trigger -->
-          <li>
-              <a class="dropdown-trigger" href="#" data-target="navBar_dropdown">
-                  Profile
-                  <i class="material-icons right">arrow_drop_down</i>
-              </a>
-          </li>
-        </ul>
-          
+            {{#if isGames}}
+              <li class="active grey darken-3"><a href="/games">Games</a></li>
+            {{else}}
+              <li><a href="/games">Games</a></li>
+            {{/if}}
+
+            <li><a href="/logout">Sign Out</a></li>
+            
+          {{else}}
+            {{#if isHome}}
+              <li class="active grey darken-3"><a href="/home">Home</a></li>
+            {{else}}
+              <li><a href="/home">Home</a></li>
+            {{/if}}
+
+            {{#if isShop}}
+              <li class="active grey darken-3"><a href="/shop">Shop</a></li>
+            {{else}}
+            <li><a href="/shop">Shop</a></li>
+            {{/if}}
+
+            {{#if isSupport}}
+              <li class="active grey darken-3"><a href="/support">Support</a></li>
+            {{else}}
+              <li><a href="/support">Support</a></li>
+            {{/if}}
+
+            {{#if isLibrary}}
+              <li class="active grey darken-3"><a href="/library">Library</a></li>
+            {{else}}
+              <li><a href="/library">Library</a></li>
+            {{/if}}
+
+            <!-- Dropdown Trigger -->
+            <li>
+                <a class="dropdown-trigger" href="#" data-target="navBar_dropdown">
+                    Profile
+                    <i class="material-icons right">arrow_drop_down</i>
+                </a>
+            </li>
+          {{/if}}
+            
         {{else}}
-          {{#if isAuthorization}}
-          <li class="active grey darken-3"><a href="/">Sign In</a></li>
+          {{#if isHome}}
+            <li class="active grey darken-3"><a href="/home">Home</a></li>
           {{else}}
-            <li><a href="/">Sign In</a></li>
+            <li><a href="/home">Home</a></li>
           {{/if}}
+
+          {{#if isShop}}
+            <li class="active grey darken-3"><a href="/shop">Shop</a></li>
+          {{else}}
+          <li><a href="/shop">Shop</a></li>
+          {{/if}}
+
+          {{#if isSupport}}
+            <li class="active grey darken-3"><a href="/support">Support</a></li>
+          {{else}}
+            <li><a href="/support">Support</a></li>
+          {{/if}}
+          
+          <li><a href="/">Sign In</a></li>
         {{/if}}
+      </ul>
 
       <!-- Dropdown Structure -->
       <ul id="navBar_dropdown" class="dropdown-content">

@@ -41,7 +41,7 @@ router.post('/gameEditing', authorization, async (req, res) => {
     delete req.body.id;
 
     await Game.findByIdAndUpdate(id, req.body);
-    res.redirect('/games');
+    res.redirect('/games/#games');
 });
 
 router.get('/:id/gameEditing', authorization, async (req, res) => {

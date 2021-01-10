@@ -11,6 +11,8 @@ const {allowInsecurePrototypeAccess} = require('@handlebars/allow-prototype-acce
 const mongoose = require('mongoose');
 const session = require('express-session');
 const MongoStore = require('connect-mongodb-session')(session);
+const csrf = require('csurf');
+const flash = require('connect-flash');
 const variablesMiddleware = require('./middleware/variables');
 const userMiddleware = require('./middleware/user');
 
@@ -21,9 +23,6 @@ const shopRoutes = require('./Scripts/shop');
 const libraryRoutes = require('./Scripts/library');
 const supportRoutes = require('./Scripts/support');
 const gamesRoutes = require('./Scripts/games');
-
-//Models
-const User = require('./models/user');
 
 //init handlebars 
 const hbs = exphbs.create({
@@ -51,6 +50,8 @@ app.use(session({
     saveUninitialized: false,
     store
 }));
+app.use(csrf());
+app.use(flash());
 app.use(variablesMiddleware);
 app.use(userMiddleware);
 

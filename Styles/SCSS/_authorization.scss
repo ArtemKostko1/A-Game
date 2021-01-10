@@ -74,6 +74,19 @@
 
                         margin: 0;
 
+                        .error_wrapper{
+                            width: 100%;
+
+                            display: flex;
+                            justify-content: center;
+
+                            .error_text{
+                                font-family: Defoult;
+                                font-size: 18px;
+                                color: rgb(255, 110, 110);
+                            }
+                        }
+
                         form{
                             .row{
                                 margin: 0;
@@ -127,11 +140,24 @@
                         }
                     }
 
-                    .registation{
+                    .registration{
                         width: 100%;
-                        height: 100%;
+                        height: auto;
 
                         margin: 0;
+
+                        .error_wrapper{
+                            width: 100%;
+
+                            display: flex;
+                            justify-content: center;
+
+                            .error_text{
+                                font-family: Defoult;
+                                font-size: 18px;
+                                color: rgb(255, 110, 110);
+                            }
+                        }
 
                         form{
                             .row{

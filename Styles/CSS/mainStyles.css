@@ -545,6 +545,16 @@ footer .container .row .right p {
   height: auto;
   margin: 0;
 }
+.authorization_wrapper .authorization_blackout .authorization_conteiner .up .down .signIn .error_wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.authorization_wrapper .authorization_blackout .authorization_conteiner .up .down .signIn .error_wrapper .error_text {
+  font-family: Defoult;
+  font-size: 18px;
+  color: #ff6e6e;
+}
 .authorization_wrapper .authorization_blackout .authorization_conteiner .up .down .signIn form .row {
   margin: 0;
   height: 100px;
@@ -584,47 +594,57 @@ footer .container .row .right p {
 .authorization_wrapper .authorization_blackout .authorization_conteiner .up .down .signIn form .btn_wrapper .btn:hover {
   background-color: #ff3d3d;
 }
-.authorization_wrapper .authorization_blackout .authorization_conteiner .up .down .registation {
+.authorization_wrapper .authorization_blackout .authorization_conteiner .up .down .registration {
   width: 100%;
-  height: 100%;
+  height: auto;
   margin: 0;
 }
-.authorization_wrapper .authorization_blackout .authorization_conteiner .up .down .registation form .row {
+.authorization_wrapper .authorization_blackout .authorization_conteiner .up .down .registration .error_wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.authorization_wrapper .authorization_blackout .authorization_conteiner .up .down .registration .error_wrapper .error_text {
+  font-family: Defoult;
+  font-size: 18px;
+  color: #ff6e6e;
+}
+.authorization_wrapper .authorization_blackout .authorization_conteiner .up .down .registration form .row {
   margin: 0;
   height: 90px;
 }
-.authorization_wrapper .authorization_blackout .authorization_conteiner .up .down .registation form .row .input-field {
+.authorization_wrapper .authorization_blackout .authorization_conteiner .up .down .registration form .row .input-field {
   margin: 0;
   font-family: "Defoult";
 }
-.authorization_wrapper .authorization_blackout .authorization_conteiner .up .down .registation form .row .input-field input {
+.authorization_wrapper .authorization_blackout .authorization_conteiner .up .down .registration form .row .input-field input {
   color: #FFF;
 }
-.authorization_wrapper .authorization_blackout .authorization_conteiner .up .down .registation form .row .input-field input:hover {
+.authorization_wrapper .authorization_blackout .authorization_conteiner .up .down .registration form .row .input-field input:hover {
   cursor: default;
   background-color: #8c8c8c;
   border-radius: 10px;
 }
-.authorization_wrapper .authorization_blackout .authorization_conteiner .up .down .registation form .row .input-field label {
+.authorization_wrapper .authorization_blackout .authorization_conteiner .up .down .registration form .row .input-field label {
   font-family: -apple-system, Arial, Helvetica, sans-serif;
   font-size: 16px;
   font-weight: 600;
   color: #282828;
 }
-.authorization_wrapper .authorization_blackout .authorization_conteiner .up .down .registation form .row .input-field label:hover {
+.authorization_wrapper .authorization_blackout .authorization_conteiner .up .down .registration form .row .input-field label:hover {
   cursor: default;
 }
-.authorization_wrapper .authorization_blackout .authorization_conteiner .up .down .registation form .btn_wrapper {
+.authorization_wrapper .authorization_blackout .authorization_conteiner .up .down .registration form .btn_wrapper {
   display: flex;
   justify-content: center;
 }
-.authorization_wrapper .authorization_blackout .authorization_conteiner .up .down .registation form .btn_wrapper .btn {
+.authorization_wrapper .authorization_blackout .authorization_conteiner .up .down .registration form .btn_wrapper .btn {
   background-color: #ff8080;
   border-radius: 5px;
   font-family: "Defoult";
   font-size: 16px;
   font-weight: 600;
 }
-.authorization_wrapper .authorization_blackout .authorization_conteiner .up .down .registation form .btn_wrapper .btn:hover {
+.authorization_wrapper .authorization_blackout .authorization_conteiner .up .down .registration form .btn_wrapper .btn:hover {
   background-color: #ff3d3d;
 }

@@ -66,12 +66,14 @@
                     </div>
                 </div>
 
+                <input type="hidden" name="_csrf" value="{{ csrf }}">
+
                 <button class="btn waves-effect waves-light">Add game</button>
             </form>
         </div>
     </div>
 
-    <div class="games">
+    <div class="games" id="games">
         <div class="row">
             {{#each games}}
                 <div class = "col s12 m4">
@@ -96,9 +98,12 @@
                                         <button class="card-action_btn waves-effect btn-large">Editing</button>
                                     </a>
                                 </div>
+
                                 <div class="col s12 m6">
-                                    <form action="/games/remove" method="POST">
+                                    <form action="/games/remove/#games" method="POST">
+                                        <input type="hidden" name="_csrf" value="{{ @root.csrf }}">
                                         <input type="hidden" name="id" value="{{id}}">
+
                                         <button class="card-action_btn waves-effect btn-large">Delete</button>
                                     </form>
                                 </div>

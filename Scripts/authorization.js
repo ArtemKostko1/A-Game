@@ -6,15 +6,25 @@ const router = Router();
 router.get('/', async (req, res) => {
     res.render('authorization', {
         title: 'A-Game | Authorization',
-        isAuthorization: true
+        isAuthorization: true,
+        signInError: req.flash('signInError'),
+        regError: req.flash('regError')
     });
 });
 
 router.get('/logout', async (req, res) => {
     req.session.destroy(() => {
-        res.redirect('/');
+        res.redirect('/home');
     });
 });
+
+function checkAdmin(created) {
+    if (created.login === 'admin'){
+        return true;
+    } else {
+        return false;
+    }
+}
 
 router.post('/signIn', async (req, res) => {
     try{
@@ -32,13 +42,21 @@ router.post('/signIn', async (req, res) => {
                     if (err){
                         throw err;
                     }
-                    res.redirect('/home');
+
+                    if (checkAdmin(created) == true) {
+                        req.session.isAdmin = true;
+                        res.redirect('/games');
+                    } else {
+                        res.redirect('/home');
+                    } 
                 });
             } else {
+                req.flash('signInError', 'Your password is incorrect');
                 res.redirect('/');
             }
 
         } else {
+            req.flash('signInError', 'Such user does not exist');
             res.redirect('/');
         }
 
@@ -53,6 +71,7 @@ router.post('/registration' , async (req, res) => {
 
         const created = await User.findOne({ login });
         if (created) {
+            req.flash('regError', 'This user does exist yet');
             res.redirect('/');
             
         } else {

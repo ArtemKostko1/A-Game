@@ -58,9 +58,14 @@ if($library) {
     $library.addEventListener('click', event => {
         if (event.target.classList.contains('js-remove')){
             const id = event.target.dataset.id;
+            const csrf = event.target.dataset.csrf;
             
             fetch('/library/remove/' + id, {
-                method: 'delete'})
+                method: 'delete',
+                headers: {
+                    'X-XSRF-TOKEN': csrf
+                },
+            })
                 .then(res => res.json())
                 .then(library => {
                     if (library.games.length) {
@@ -84,7 +89,7 @@ if($library) {
                                         <div class="card-action">
                                             <div class="row">
                                                 <div class="col s12 m6">
-                                                    <button class="card-action_btn waves-effect btn-large js-remove" data-id="${g.id}">Delete</button>
+                                                    <button class="card-action_btn waves-effect btn-large js-remove" data-id="${g.id}" data-csrf="${g.csrf}">Delete</button>
                                                 </div>
                                                 <div class="col s12 m6">
                                                     <button class="card-action_btn waves-effect btn-large">Raiting</button>

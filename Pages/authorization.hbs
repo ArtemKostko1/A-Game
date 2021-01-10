@@ -7,16 +7,23 @@
           <div class="col s12">
             <ul class="tabs">
               <li class="tab col s6"><a href="#signIn" class="active">Sign In</a></li>
-              <li class="tab col s6"><a href="#registation">Registation</a></li>
+              <li class="tab col s6"><a href="#registration">Registration</a></li>
             </ul>
         </div>
       </div>
         
       <div class="down">
         <div id="signIn" class="col s6 offset-s3 signIn">
+
+          
+          {{#if signInError}}
+            <div class="error_wrapper">
+              <p class="error_text">{{ signInError }}</p>
+            </div>
+          {{/if}}
+
           <div class="form_wrapper">
               <form action="/signIn" method="POST">
-
                   <div class="row">
                       <div class="input-field">
                           <input id="signInLogin" type="text" name="login" class="validate" autocomplete="off" required>
@@ -33,6 +40,8 @@
                       </div>
                   </div>
 
+                  <input type="hidden" name="_csrf" value="{{ csrf }}">
+
                   <div class="btn_wrapper">
                     <button class="btn waves-effect waves-light">Sign In</button>
                   </div>
@@ -40,7 +49,14 @@
             </div>
         </div>
           
-        <div id="registation" class="col s6 offset-s3 registation">
+        <div id="registration" class="col s6 offset-s3 registration">
+
+            {{#if regError}}
+              <div class="error_wrapper">
+                <p class="error_text">{{ regError }}</p>
+              </div>
+            {{/if}}
+
             <div class="form_wrapper">
               <form action="/registration" method="POST">
 
@@ -92,8 +108,10 @@
                       </div>
                   </div>
 
+                  <input type="hidden" name="_csrf" value="{{ csrf }}">
+
                   <div class="btn_wrapper">
-                    <button class="btn waves-effect waves-light">Registation</button>
+                    <button class="btn waves-effect waves-light">Registration</button>
                   </div>
               </form>
             </div>
