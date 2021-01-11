@@ -24,7 +24,7 @@ router.post('/', authorization, async (req, res) => {
         releaseDate: req.body.releaseDate,
         developer: req.body.developer,
         ageLimit: req.body.ageLimit,
-        raiting: null,
+        raiting: 0,
         userId: req.user
     });
 

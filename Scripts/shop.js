@@ -1,5 +1,6 @@
 const {Router} = require('express');
 const Game = require('../models/game');
+const Game = require('../models/raiting');
 const authorization = require('../middleware/authorization');
 const router = Router();
 
@@ -19,7 +20,9 @@ router.post('/setRating', authorization, async (req, res) => {
     const {id} = req.body;
     delete req.body.id;
 
-    const game = await Game.findById(req.body.id);
+    const rating = new Rating({userId: id});
+
+    const game = await Game.count();
 
     //const raiting = await Game.findById(req.body.id);
 
