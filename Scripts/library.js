@@ -4,10 +4,14 @@ const authorization = require('../middleware/authorization');
 const router = Router();
 
 function mapLibraryItems(library) {
-    return library.items.map(g => ({
-        ...g.gameId._doc,
-        id: g.gameId.id
-    }));
+    try{
+        return library.items.map(g => ({
+            ...g.gameId._doc,
+            id: g.gameId.id
+        }));
+    } catch (err) {
+        console.log(err);
+    }
 }
 
 router.get('/', authorization, async (req, res) => {
@@ -28,7 +32,7 @@ router.post('/addToLibrary', authorization, async (req, res) => {
     const game = await Game.findById(req.body.id);
     await req.user.addToLibrary(game);
 
-    res.redirect('/shop');
+    res.redirect('/shop#game');
 });
 
 router.delete('/remove/:id', authorization, async (req, res) => {

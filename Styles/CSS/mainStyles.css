@@ -524,7 +524,7 @@ footer .container .row .right p {
 }
 .authorization_wrapper {
   width: 100%;
-  height: 100%;
+  height: 100vh;
   background-image: url("among-us.jpg");
   background-size: cover;
   background-repeat: no-repeat;
@@ -532,7 +532,7 @@ footer .container .row .right p {
 }
 .authorization_wrapper .authorization_blackout {
   width: 100%;
-  height: 100%;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -541,7 +541,7 @@ footer .container .row .right p {
 }
 .authorization_wrapper .authorization_blackout .authorization_conteiner {
   position: relative;
-  width: 50%;
+  width: 600px;
   height: auto;
   margin: 15px 0;
   background-color: rgba(0, 0, 0, 0.459);

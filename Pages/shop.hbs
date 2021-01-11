@@ -17,7 +17,7 @@
     <div class="row">
         {{#each shopGames}}
             <div class = "col s12 m4">
-                <div class="card large game_wrapper">
+                <div class="card large game_wrapper" id="game">
                     <div class="card-image waves-effect waves-block waves-light">
                         <img class="activator" src="{{imgUrl}}" alt="{{name}}">
                     </div>
@@ -47,7 +47,7 @@
                                 <form action="shop/setRating" method="POST">
                                     <span name="raitingValue">{{raiting}}</span>
 
-                                    <input type="hidden" name="id" value="{{id}}">
+                                    
 
                                     <button type="submit" class="сheckMark_btn btn-floating waves-effect waves-ligh red">
                                         <i class="material-icons">favorite_border</i>

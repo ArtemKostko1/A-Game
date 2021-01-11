@@ -1,6 +1,6 @@
 const {Router} = require('express');
 const Game = require('../models/game');
-const Game = require('../models/raiting');
+const Rating = require('../models/rating');
 const authorization = require('../middleware/authorization');
 const router = Router();
 
