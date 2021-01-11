@@ -65,7 +65,8 @@ async function start() {
         await mongoose
             .connect(connectionstring, {
                 useNewUrlParser: true,
-                useFindAndModify: false
+                useFindAndModify: false,
+                useUnifiedTopology: true
             },
         )
         .then(() => console.log('MongoDb connected'))

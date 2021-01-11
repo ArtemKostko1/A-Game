@@ -1,6 +1,6 @@
 const {Router} = require('express');
 const bcrypt = require('bcryptjs');
-const {body, validationResult} = require('express-validator/check');
+const {body, validationResult} = require('express-validator');
 const User = require('../models/user');
 const router = Router();
 
@@ -52,11 +52,13 @@ router.post('/signIn', async (req, res) => {
                     } 
                 });
             } else {
+                req.flash('regError', '');
                 req.flash('signInError', 'Your password is incorrect');
                 res.redirect('/#signIn');
             }
 
         } else {
+            req.flash('regError', '');
             req.flash('signInError', 'Such user does not exist');
             res.redirect('/#signIn');
         }
@@ -79,6 +81,7 @@ router.post('/registration', body('email').isEmail(), async (req, res) => {
         }
 
         if (created) {
+            req.flash('regError', '');
             req.flash('regError', 'This user does exist yet');
             res.redirect('/#registration');
             

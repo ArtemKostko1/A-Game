@@ -20,7 +20,7 @@ router.get('/', authorization, async (req, res) => {
     res.render('library', {
         title: 'A-Game | Library',
         isLibrary: true,
-        games
+        games: games
     });
 });
 

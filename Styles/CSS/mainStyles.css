@@ -524,7 +524,7 @@ footer .container .row .right p {
 }
 .authorization_wrapper {
   width: 100%;
-  height: 100vh;
+  height: 100%;
   background-image: url("among-us.jpg");
   background-size: cover;
   background-repeat: no-repeat;
@@ -532,7 +532,7 @@ footer .container .row .right p {
 }
 .authorization_wrapper .authorization_blackout {
   width: 100%;
-  height: 100vh;
+  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -541,9 +541,9 @@ footer .container .row .right p {
 }
 .authorization_wrapper .authorization_blackout .authorization_conteiner {
   position: relative;
-  top: -64px;
-  width: 600px;
+  width: 50%;
   height: auto;
+  margin: 15px 0;
   background-color: rgba(0, 0, 0, 0.459);
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
 }
@@ -568,15 +568,17 @@ footer .container .row .right p {
 }
 .authorization_wrapper .authorization_blackout .authorization_conteiner .up .down {
   display: flex;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
   width: 100%;
-  height: 636px;
+  height: auto;
   padding: 30px;
 }
 .authorization_wrapper .authorization_blackout .authorization_conteiner .up .down .signIn {
   width: 100%;
   height: auto;
-  margin: 0;
+  margin: 50px 0;
 }
 .authorization_wrapper .authorization_blackout .authorization_conteiner .up .down .signIn .error_wrapper {
   width: 100%;
@@ -590,7 +592,6 @@ footer .container .row .right p {
 }
 .authorization_wrapper .authorization_blackout .authorization_conteiner .up .down .signIn form .row {
   margin: 0;
-  height: 100px;
 }
 .authorization_wrapper .authorization_blackout .authorization_conteiner .up .down .signIn form .row .input-field {
   margin: 0;
@@ -629,7 +630,7 @@ footer .container .row .right p {
 }
 .authorization_wrapper .authorization_blackout .authorization_conteiner .up .down .registration {
   width: 100%;
-  height: auto;
+  height: 100%;
   margin: 0;
 }
 .authorization_wrapper .authorization_blackout .authorization_conteiner .up .down .registration .error_wrapper {
