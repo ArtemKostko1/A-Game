@@ -337,6 +337,23 @@ footer .container .row .right p {
   background-color: #fafafa;
   color: #212121;
 }
+.shop_wrapper .row .col .game_wrapper .card-action .row .rating {
+  height: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.shop_wrapper .row .col .game_wrapper .card-action .row .rating form {
+  display: flex;
+  align-items: center;
+}
+.shop_wrapper .row .col .game_wrapper .card-action .row .rating form span {
+  margin-right: 10px;
+  font-family: Defoult;
+  font-size: 16px;
+  font-weight: 600;
+}
 
 @font-face {
   font-family: Defoult;

@@ -26,7 +26,7 @@ const gameSchema = new Schema({
         required: true
     },
     ageLimit: {
-        type: String,
+        type: Number,
         required: true
     },
     raiting: Number,
