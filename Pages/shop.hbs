@@ -6,18 +6,18 @@
         </a>
 
         <a href="shop/sortByAgeLimit">
-            <button class="sort_btn waves-effect btn-large">Sort by Age limit</button>
+            <button class="sort_btn waves-effect btn-large">Sort by age limit</button>
         </a>
 
-        <a href="shop/SortByDate">
-            <button class="sort_btn waves-effect btn-large">Sort by data</button>
+        <a href="shop/sortByDate">
+            <button class="sort_btn waves-effect btn-large">Sort by date</button>
         </a>
     </div>
 
     <div class="row">
         {{#each shopGames}}
             <div class = "col s12 m4">
-                <div class="card large game_wrapper" id="game">
+                <div class="card large game_wrapper">
                     <div class="card-image waves-effect waves-block waves-light">
                         <img class="activator" src="{{imgUrl}}" alt="{{name}}">
                     </div>
@@ -44,10 +44,10 @@
                                 </form>
                             </div>
                             <div class="col s12 m6 rating">
-                                <form action="shop/setRating" method="POST">
-                                    <span name="raitingValue">{{raiting}}</span>
+                                <form action="/setRating" method="POST">
+                                    <span name="ratingValue">{{rating}}</span>
 
-                                    
+                                    <input type="hidden" name="ratingId" value="{{id}}">
 
                                     <button type="submit" class="сheckMark_btn btn-floating waves-effect waves-ligh red">
                                         <i class="material-icons">favorite_border</i>

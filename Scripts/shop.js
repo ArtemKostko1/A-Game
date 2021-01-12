@@ -1,5 +1,6 @@
 const {Router} = require('express');
 const Game = require('../models/game');
+const User = require('../models/user');
 const Rating = require('../models/rating');
 const authorization = require('../middleware/authorization');
 const router = Router();
@@ -7,7 +8,7 @@ const router = Router();
 router.get('/', async (req, res) => {
     const shopGames = await Game.find()
     .populate('userId', 'login password')
-    .select('imgUrl name genre description releaseDate developer ageLimit raiting');
+    .select('imgUrl name genre description releaseDate developer ageLimit rating');
     
     res.render('shop', {
         title: 'A-Game | Shop',
@@ -18,11 +19,14 @@ router.get('/', async (req, res) => {
 
 router.post('/setRating', authorization, async (req, res) => {
     const {id} = req.body;
-    delete req.body.id;
 
-    const rating = new Rating({userId: id});
+    const uid = await Game.User.findOne({ id });
 
-    const game = await Game.count();
+    const {ratingValue} = req.body;
+
+    //const rating = new Rating({userId: id});
+
+    //const game = await Game.count();
 
     //const raiting = await Game.findById(req.body.id);
 
@@ -30,7 +34,8 @@ router.post('/setRating', authorization, async (req, res) => {
 
     //const setRating = await Game.findByIdAndUpdate(id, {raiting: raitingValue+1});
 
-    console.log(game);
+    console.log(uid);
+    console.log(ratingValue);
     res.redirect('/shop');
 });
 
@@ -60,7 +65,7 @@ router.get('/sortByAgeLimit', async (req, res) => {
     }
 });
 
-router.get('/SortByDate', async (req, res) => {
+router.get('/sortByDate', async (req, res) => {
     try {
         const sortGames = await Game.find(req.body.name).sort({'releaseDate': -1});
         

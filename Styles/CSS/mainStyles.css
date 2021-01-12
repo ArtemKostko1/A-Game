@@ -207,6 +207,7 @@ footer .container .row .right p {
 }
 .games_wrapper .games .row .col .game_container .card-image {
   max-height: 100%;
+  min-height: 250px;
 }
 .games_wrapper .games .row .col .game_container .card-reveal {
   font-family: "Defoult";
@@ -281,9 +282,6 @@ footer .container .row .right p {
 .shop_wrapper .row .col .game_wrapper {
   margin: 50px 20px;
   z-index: 0;
-}
-.shop_wrapper .row .col .game_wrapper .card-image {
-  max-height: 100%;
 }
 .shop_wrapper .row .col .game_wrapper .card-content {
   font-family: "Defoult";

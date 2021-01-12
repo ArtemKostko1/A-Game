@@ -9,7 +9,7 @@
             <button class="sort_btn waves-effect btn-large">Sort by age limit</button>
         </a>
 
-        <a href="./SortByDate">
+        <a href="./sortByDate">
             <button class="sort_btn waves-effect btn-large">Sort by date</button>
         </a>
     </div>
@@ -43,10 +43,15 @@
                                     <button class="card-action_btn waves-effect btn-large">Add to library</button>
                                 </form>
                             </div>
-                            <div class="col s12 m6">
-                                <form action="" method="POST">
-                                    <input type="hidden" name="id" value="{{id}}">
-                                    <button class="card-action_btn waves-effect btn-large">Raiting</button>
+                            <div class="col s12 m6 rating">
+                                <form action="shop/setRating" method="POST">
+                                    <span name="ratingValue">{{rating}}</span>
+
+                                    <input type="hidden" name="ratingId" value="{{id}}">
+
+                                    <button type="submit" class="сheckMark_btn btn-floating waves-effect waves-ligh red">
+                                        <i class="material-icons">favorite_border</i>
+                                    </button>
                                 </form>
                             </div>
                         </div>

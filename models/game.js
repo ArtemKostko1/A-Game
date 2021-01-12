@@ -29,7 +29,7 @@ const gameSchema = new Schema({
         type: Number,
         required: true
     },
-    raiting: Number,
+    rating: Number,
     userId: {
         type: Schema.Types.ObjectId,
         ref: 'User'

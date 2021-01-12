@@ -88,9 +88,10 @@ router.post('/registration', body('email').isEmail(), async (req, res) => {
         } else {
             const hashPassword = await bcrypt.hash(password, 10);
 
-            const user = new User({ name, surname, email, login, password: hashPassword, cart: {items: []} });
+            const user = new User({ name, surname, email, login, password: hashPassword, library: {items: []} });
 
             await user.save();
+
             res.redirect('/#signIn');
         }
     } catch(err) {
