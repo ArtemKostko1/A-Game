@@ -284,6 +284,7 @@ footer .container .row .right p {
   z-index: 0;
 }
 .shop_wrapper .row .col .game_wrapper .card-content {
+  height: 150px;
   font-family: "Defoult";
 }
 .shop_wrapper .row .col .game_wrapper .card-content .card-title {
@@ -324,6 +325,7 @@ footer .container .row .right p {
 .shop_wrapper .row .col .game_wrapper .card-action .row .col .card-action_btn {
   height: 50px;
   width: 100%;
+  line-height: 1rem;
   margin: 0;
   color: #999999;
   background-color: #FFF;
@@ -522,7 +524,7 @@ footer .container .row .right p {
 }
 .authorization_wrapper {
   width: 100%;
-  height: 100vh;
+  height: 100%;
   background-image: url("among-us.jpg");
   background-size: cover;
   background-repeat: no-repeat;
@@ -530,7 +532,7 @@ footer .container .row .right p {
 }
 .authorization_wrapper .authorization_blackout {
   width: 100%;
-  height: 100vh;
+  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -541,7 +543,7 @@ footer .container .row .right p {
   position: relative;
   width: 600px;
   height: auto;
-  margin: 15px 0;
+  margin: 50px 0;
   background-color: rgba(0, 0, 0, 0.459);
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
 }

@@ -1,6 +1,7 @@
 const {Router} = require('express');
 const bcrypt = require('bcryptjs');
-const {body, validationResult} = require('express-validator');
+const {validationResult} = require('express-validator');
+const {registrationValidators} = require('../utils/validators')
 const User = require('../models/user');
 const router = Router();
 
@@ -68,7 +69,7 @@ router.post('/signIn', async (req, res) => {
     }
 });
 
-router.post('/registration', body('email').isEmail(), async (req, res) => {
+router.post('/registration', registrationValidators, async (req, res) => {
     try{
         const {name, surname, email, login, password, confirmPassword} = req.body;
 
